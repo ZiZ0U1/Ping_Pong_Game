@@ -1,28 +1,36 @@
-# 🏓 Ping Pong Game (C++)
+# 🏓 Ping Pong Game (Player vs. CPU)
 
-A console-based implementation of the classic Ping Pong (or Pong) game, developed in C++ to practice foundational programming skills and solidify Object-Oriented Programming (OOP) principles.
+A console-based implementation of the classic Pong game, developed in C++ to practice foundational programming skills and solidify Object-Oriented Programming (OOP) principles, featuring a basic Computer Player (CPU).
 
 ## ✨ Features
 
-* **Classic Gameplay:** Two paddles and a ball.
-* **Console Interface:** Utilizes standard input/output for a simple, fast-paced experience.
-* **OOP Architecture:** Designed with clear class separation for maintainability and scalability.
+* **Single-Player Mode:** Play against an intelligent (CPU) opponent.
+* **Console Interface:** Simple and fast-paced gameplay using standard I/O.
+* **OOP Architecture:** Clear class separation for entity management and game logic.
 
 ## 🛠️ Technology Stack
 
 * **Language:** C++ (Utilizing standard libraries only)
 * **Build System:** [Specify your build system, e.g., GCC/G++ or makefile]
 
+## 🧠 CPU Opponent Logic
+
+The right-side paddle is controlled by a Computer Player. The logic demonstrates basic decision-making:
+
+* **Tracking:** The CPU continuously tracks the **y-coordinate** of the moving `Ball` object.
+* **Movement:** The CPU decides to move its paddle **Up** or **Down** based on whether the ball is above or below its current paddle center.
+* **Difficulty:** [Optional: Briefly mention how the CPU's reaction speed or "smartness" is controlled, e.g., "The CPU has a slight delay to allow the player a chance to score."]
+
 ## 💡 Object-Oriented Design (OOP) Implementation
 
-This project was specifically structured using OOP concepts to manage the game state and entities efficiently.
+This project was structured using OOP concepts to manage the game state and entities efficiently. By modeling the paddles and ball as separate objects, the game logic remains modular.
 
 | OOP Concept | Application in this Project |
 | :--- | :--- |
-| **Encapsulation** | Used classes like `Ball` and `Paddle` to bundle data (position, direction, score) and methods (move, draw) together. The internal representation of these objects is hidden from the main game loop. |
-| **Classes & Objects** | Key game elements are represented by dedicated classes: `Ball`, `Paddle`, and `GameManager` (or `GameLoop`). |
-| **Inheritance** | [**Optional - Add this if you used it:** For example, if you created a base `GameObject` class that both `Ball` and `Paddle` inherit shared properties like position and drawing logic.] |
-| **Abstraction** | The main game loop interacts with methods like `ball.Move()` or `paddle.Update()`, without needing to know the complex implementation details of how the movements or collision calculations are performed. |
+| **Encapsulation** | Used classes like `Ball` and `Paddle` to bundle data (position, direction, score) and methods (move, draw) together. Critically, the CPU logic is confined to the `CPUPaddle` object's methods. |
+| **Classes & Objects** | Key game elements are represented by dedicated classes: `Ball`, the player's `Paddle`, the `CPUPaddle`, and the overall `GameManager`. |
+| **Inheritance** | [**Crucial - If Applicable:** Did you create a generic `Paddle` class and then inherit from it to create a `PlayerPaddle` and a `CPUPaddle`? If so, highlight this: **"The `PlayerPaddle` and `CPUPaddle` classes inherit from a base `Paddle` class."**] |
+| **Abstraction** | The main game loop calls simple methods like `cpuPaddle.Update(ball)` without needing to know the complex internal logic of how the CPU determines its move. |
 
 ## 🚀 How to Run the Game
 
@@ -35,7 +43,7 @@ This project was specifically structured using OOP concepts to manage the game s
 2.  **Compile the Code:**
     ```bash
     # If using g++ (most common)
-    g++ -o pingpong [List all your .cpp files here, e.g., main.cpp Ball.cpp Paddle.cpp]
+    g++ -o pingpong [List all your .cpp files here, e.g., main.cpp Ball.cpp Paddle.cpp CPUPaddle.cpp]
     ```
 
 3.  **Execute the Game:**
@@ -45,10 +53,16 @@ This project was specifically structured using OOP concepts to manage the game s
 
 ## 🎮 Game Controls
 
-| Action | Player 1 (Left) | Player 2 (Right) |
-| :--- | :--- | :--- |
-| **Move Up** | `[Key for Up, e.g., 'w']` | `[Key for Up, e.g., 'i']` |
-| **Move Down** | `[Key for Down, e.g., 's']` | `[Key for Down, e.g., 'k']` |
-| **Exit** | `[Key for Exit, e.g., 'x']` | `[Key for Exit, e.g., 'x']` |
+| Action | Control Key |
+| :--- | :--- |
+| **Move Up** | `[Key for Up, e.g., 'w']` |
+| **Move Down** | `[Key for Down, e.g., 's']` |
+| **Exit Game** | `[Key for Exit, e.g., 'x']` |
 
----
+***
+
+### Next Step
+
+This updated README strongly highlights your abilities in both OOP and basic AI/Game Logic.
+
+Would you like me to help you draft a small **C++ code snippet** demonstrating how your `CPUPaddle` class might use a method from the `Ball` class to make its movement decision? This is a great way to visually show code interaction in the README.
