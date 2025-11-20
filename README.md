@@ -1,6 +1,6 @@
 # 🏓 Ping Pong Game (Player vs. CPU)
 
-A console-based implementation of the classic Pong game, developed in C++ to practice foundational programming skills and solidify Object-Oriented Programming (OOP) principles, featuring a basic Computer Player (CPU).
+A GUI implementation of the classic Pong game, developed in C++ to practice foundational programming skills and solidify Object-Oriented Programming (OOP) principles, featuring a basic Computer Player (CPU).
 
 ## ✨ Features
 
