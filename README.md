@@ -60,9 +60,3 @@ This project was structured using OOP concepts to manage the game state and enti
 | **Exit Game** | `[Key for Exit, e.g., 'x']` |
 
 ***
-
-### Next Step
-
-This updated README strongly highlights your abilities in both OOP and basic AI/Game Logic.
-
-Would you like me to help you draft a small **C++ code snippet** demonstrating how your `CPUPaddle` class might use a method from the `Ball` class to make its movement decision? This is a great way to visually show code interaction in the README.
